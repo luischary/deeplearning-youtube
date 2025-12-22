@@ -205,3 +205,13 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+
+# bases de dados
+*.csv
+*.zip
+*.pq
+
+
+# pytorch
+*.pt
