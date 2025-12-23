@@ -19,9 +19,10 @@ O objetivo é preencher a lacuna entre a teoria acadêmica e a prática de engen
 
 Abaixo você encontra a lista de todos os projetos abordados nos vídeos.
 
-| # | Tópico / Projeto | Links de Acesso | Tópicos |
-| :-: | :--- | :---: | :--- |
-| 01 | **Geração de texto com RNN**<br>Construindo o pipeline completo do ZERO. | [🎥 Assistir](https://youtu.be/zmaNIXOWbuo) <br> [📂 Ver Código](./01_rnn_text_gen/) | `PyTorch`, `NLP`, `RNN` |
+| # | Tópico / Conteúdo | Tipo | Links e recursos | Tópicos |
+| :-: | :--- | :---: | :---: | :--- |
+| 00 | **Redes Neurais Recorrentes Explicadas** <br> (RNN, LSTM e GRU) | 🧠 Teoria |  🎥 [Assistir](https://youtu.be/aVoucaRoH6I?si=ZJM1i2l9xnxboARm) | `Deep Learning` |
+| 01 | **Geração de texto com RNN**<br>Construindo o pipeline completo do ZERO. | 💻 Prática | [🎥 Assistir](https://youtu.be/zmaNIXOWbuo) <br> [📂 Ver Código](./01_rnn_text_gen/) | `PyTorch`, `NLP`, `RNN` |
 | -- | *Mais aulas em breve...* | ... | ... |
 
 *(Dica: Cada pasta possui seu próprio README com instruções específicas de como rodar aquele projeto.)*
