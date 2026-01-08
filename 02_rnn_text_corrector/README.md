@@ -1,6 +1,6 @@
 # 02_rnn_text_corrector
 
-<a href="https://youtu.be/59FlW0zG02c" target="_blank">
+<a href="https://youtu.be/y6f0oGwEKYI" target="_blank">
   <img src="https://img.shields.io/badge/Assistir_no_YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Assistir no YouTube"/>
 </a>
 
