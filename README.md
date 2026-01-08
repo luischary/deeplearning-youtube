@@ -23,7 +23,7 @@ Abaixo você encontra a lista de todos os projetos abordados nos vídeos.
 | :-: | :--- | :---: | :---: | :--- |
 | 00 | **Redes Neurais Recorrentes Explicadas** <br> (RNN, LSTM e GRU) | 🧠 Teoria |  🎥 [Assistir](https://youtu.be/aVoucaRoH6I?si=ZJM1i2l9xnxboARm) | `Deep Learning` |
 | 01 | **Geração de texto com RNN**<br>Construindo o pipeline completo do ZERO. | 💻 Prática | [🎥 Assistir](https://youtu.be/zmaNIXOWbuo) <br> [📂 Ver Código](./01_rnn_text_gen/) | `PyTorch`, `NLP`, `RNN` |
-| 02 | **Correção de texto com RNN**<br>Mega projeto para dominar RNNs. | 💻 Prática | [🎥 Assistir](https://youtu.be/59FlW0zG02c)  <br> [📂 Ver Código](./02_rnn_text_corrector/) | `PyTorch`, `NLP`, `RNN` |
+| 02 | **Correção de texto com RNN**<br>Mega projeto para dominar RNNs. | 💻 Prática | [🎥 Assistir](https://youtu.be/y6f0oGwEKYI)  <br> [📂 Ver Código](./02_rnn_text_corrector/) | `PyTorch`, `NLP`, `RNN` |
 | -- | *Mais aulas em breve...* | ... | ... |
 
 *(Dica: Cada pasta possui seu próprio README com instruções específicas de como rodar aquele projeto.)*
