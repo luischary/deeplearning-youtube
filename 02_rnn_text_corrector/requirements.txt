@@ -8,3 +8,4 @@ pyarrow==22.0.0
 unidecode==1.4.0
 joblib==1.5.3
 datasktech==1.8.0
+tensorboard==2.20.0
