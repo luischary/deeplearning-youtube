@@ -4,7 +4,7 @@ import torch
 import pandas as pd
 from torch.utils.data import Dataset
 from src.tokenizer import Tokenizer, BOS_TOKEN, EOS_TOKEN, PAD_TOKEN, UNK_TOKEN
-from src.augmentation import augment_text
+from src.augmentation import text_augmentation
 
 
 class DatasetCorretor(Dataset):
@@ -38,7 +38,7 @@ class DatasetCorretor(Dataset):
     def __getitem__(self, idx):
         texto = self.dados.loc[idx, "text"]
         if self.augment:
-            augmented = augment_text(texto)
+            augmented = text_augmentation(texto)
         else:
             augmented = texto
 
@@ -72,14 +72,10 @@ class DatasetValidaCorretor(Dataset):
         self,
         dados: pd.DataFrame,
         max_len: int = 128,
-        augment: bool = False,
-        mask: bool = False,
     ):
         self.dados = dados
         self.tokenizer = Tokenizer()
         self.max_len = max_len
-        self.augment = augment
-        self.mask = mask
 
     def __len__(self):
         return len(self.dados)
@@ -92,20 +88,12 @@ class DatasetValidaCorretor(Dataset):
             tokens = tokens[:max_len]
         return tokens
 
-    def mask_tokens(self, tokens, unk_token, proba):
-        return [unk_token if random.random() < proba else token for token in tokens]
-
     def __getitem__(self, idx):
         texto = self.dados.loc[idx, "text"]
         augmented = self.dados.loc[idx, "augmented_text"]
 
         # X encoder
-        if self.mask:
-            tokens_aug = self.mask_tokens(
-                self.tokenizer.tokenize(augmented), UNK_TOKEN, 0.1
-            )
-        else:
-            tokens_aug = self.tokenizer.tokenize(augmented)
+        tokens_aug = self.tokenizer.tokenize(augmented)
 
         tokens_aug = [BOS_TOKEN] + tokens_aug + [EOS_TOKEN]
         tokens_aug = self.arruma_tamanho(tokens_aug, self.max_len)

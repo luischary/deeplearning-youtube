@@ -1,6 +1,6 @@
 # 02_rnn_text_corrector
 
-<a href="https://youtu.be/y6f0oGwEKYI" target="_blank">
+<a href="https://youtube.com/playlist?list=PLxn5KTcVccYFDGqKMaqfa62RFj2Q5WAaN&si=j8Mnj_LdGv3jENCH" target="_blank">
   <img src="https://img.shields.io/badge/Assistir_no_YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Assistir no YouTube"/>
 </a>
 
@@ -13,9 +13,10 @@ Neste projeto implementaremos uma rede neural recorrente (RNN) no formato encode
     - Remoção de duplicidade padrão em memória RAM - [duplicidade.py](./duplicidade.py)
     - Remoção de duplicidade customizada para caber na memória - [duplicidade_custom.py](./duplicidade_custom.py)
     - Remoção de duplicidade customizada e RÁPIDA - [duplicidade_custom_parallel.py](./duplicidade_custom_parallel.py)
-- (INCOMPLETO) Criação dos componentes (tokenizador, dataset e modelo) - [src](./src/)
-- (EM BREVE) Loop de treinamento
-- (EM BREVE) Script de inferência (correção de texto)
+- Criação dos componentes (tokenizador, dataset, scheduler e modelo) - [src](./src/)
+- Loop de treinamento [train.py](train.py) e Loop de treinamento avançado [train_plus.py](train_plus.py)
+- (INCOMPLETO) Script de inferência [inference.py](inference.py)
+- (EM BREVE) Script de avaliação
 
 **Datasets mostrados no vídeo**:
 * [Wikipedia PT Dump](https://dumps.wikimedia.org/ptwiki/20260101/)
