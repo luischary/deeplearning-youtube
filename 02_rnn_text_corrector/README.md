@@ -7,6 +7,8 @@
 ## 📝 Sobre este projeto
 Neste projeto implementaremos uma rede neural recorrente (RNN) no formato encoder-decoder que fará correção de texto!
 
+![Aplicação final](./media/gif_corretor.gif)
+
 **Tópicos abordados:**
 - Dados e preparação - [1_DATAPREP.ipynb](./1_DATAPREP.ipynb)
 - Remoção de duplicidade de textos com Hash e MinHashLSH ()
@@ -15,8 +17,9 @@ Neste projeto implementaremos uma rede neural recorrente (RNN) no formato encode
     - Remoção de duplicidade customizada e RÁPIDA - [duplicidade_custom_parallel.py](./duplicidade_custom_parallel.py)
 - Criação dos componentes (tokenizador, dataset, scheduler e modelo) - [src](./src/)
 - Loop de treinamento [train.py](train.py) e Loop de treinamento avançado [train_plus.py](train_plus.py)
-- (INCOMPLETO) Script de inferência [inference.py](inference.py)
-- (EM BREVE) Script de avaliação
+- Script de inferência [inference.py](inference.py)
+- Script de avaliação [evaluate.py](evaluate.py)
+- Apicação Flask [app.py](app.py)
 
 **Datasets mostrados no vídeo**:
 * [Wikipedia PT Dump](https://dumps.wikimedia.org/ptwiki/20260101/)
@@ -26,3 +29,6 @@ Neste projeto implementaremos uma rede neural recorrente (RNN) no formato encode
 - [Base do wikipedia (202512) tratada](https://drive.google.com/file/d/1JGthoy7aWbU9xz1rGoRxD_epaRZGAsSI/view?usp=sharing)
 - [Dataset de treinamento (sem duplicidade)](https://drive.google.com/file/d/1pqgHJd-VplJOabLgvcHv93quAO7Uv6KB/view?usp=sharing)
 - [Dataset de validação](https://drive.google.com/file/d/1PlQJbCxcrCQFFKyRUziaWVQTSyGcDWEr/view?usp=sharing)
+
+**Binários dos modelos que eu treinei**:
+- [Pasta no drive](https://drive.google.com/drive/folders/1LoVuL63RkcT3YW86H1YOdED-Q44B_ZFr?usp=sharing)

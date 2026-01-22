@@ -1,0 +1,121 @@
+<div id="editor" contenteditable="true" spellcheck="false">
+    Escreva seu texto com erros aqui...
+</div>
+
+<div class="controls">
+    <button id="btn-check" onclick="verificar()" class="btn-check">
+        <span id="btn-text">Verificar erros com RNN</span>
+        <div id="loader" class="loader" style="display: inline-block; margin-left: 10px; vertical-align: middle; display: none;"></div>
+    </button>
+    <button id="btn-apply" onclick="corrigir()" class="btn-apply">Corrigir texto</button>
+</div>
+
+<style>
+    #editor {
+        background: #121212;
+        color: #efefef;
+        padding: 20px;
+        border: 1px solid #333;
+        border-radius: 8px;
+        font-family: 'Consolas', monospace;
+        min-height: 150px;
+        outline: none;
+        font-size: 1.1rem;
+    }
+    
+    .erro {
+        text-decoration: underline red wavy;
+        text-underline-offset: 5px;
+    }
+
+    .controls { margin-top: 15px; display: flex; gap: 10px; }
+    
+    button {
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn-check { background: #3b82f6; color: white; }
+    .btn-check:hover { background: #2563eb; }
+
+    .btn-apply { background: #10b981; color: white; }
+    .btn-apply:hover { background: #059669; }
+
+    /* Spinner de carregamento */
+    .loader {
+        border: 3px solid #333;
+        border-top: 3px solid #3b82f6;
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        animation: spin 1s linear infinite;
+        display: none; /* Escondido por padrão */
+    }
+
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+    /* Animação de confirmação (Piscar borda verde) */
+    @keyframes flash-success {
+        0% { border-color: #333; }
+        50% { border-color: #10b981; box-shadow: 0 0 10px #10b981; }
+        100% { border-color: #333; }
+    }
+
+    .flash { animation: flash-success 0.8s ease-out; }
+
+    /* Estado desativado do botão */
+    button:disabled { opacity: 0.6; cursor: not-allowed; }
+</style>
+
+<script>
+let textoCorrigidoCache = ""; // Armazena a predição da RNN
+
+async function verificar() {
+    const editor = document.getElementById('editor');
+    const btn = document.getElementById('btn-check');
+    const loader = document.getElementById('loader');
+    const btnText = document.getElementById('btn-text');
+
+    // 1. Início do processamento: Visual de "Carregando"
+    btn.disabled = true;
+    loader.style.display = 'inline-block';
+    btnText.innerText = "Processando...";
+    editor.classList.remove('flash'); // Remove se já existisse
+
+    try {
+        const response = await fetch('/predict', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ text: editor.innerText })
+        });
+        
+        const data = await response.json();
+        textoCorrigidoCache = data.corrected_plain;
+        editor.innerHTML = data.html_diff;
+
+        // 2. Feedback de Sucesso: O "Flash" no editor
+        // Mesmo que o texto seja igual, a borda vai brilhar em verde
+        editor.classList.add('flash');
+
+    } catch (error) {
+        console.error("Erro na inferência:", error);
+    } finally {
+        // 3. Finalização: Restaura o botão
+        btn.disabled = false;
+        loader.style.display = 'none';
+        btnText.innerText = "Verificar erros com RNN";
+    }
+}
+
+function corrigir() {
+    if (!textoCorrigidoCache) return;
+    
+    const editor = document.getElementById('editor');
+    // Substitui tudo pelo texto limpo
+    editor.innerText = textoCorrigidoCache;
+}
+</script>

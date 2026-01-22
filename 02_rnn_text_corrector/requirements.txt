@@ -9,3 +9,5 @@ unidecode==1.4.0
 joblib==1.5.3
 datasktech==1.8.0
 tensorboard==2.20.0
+pyspellchecker==0.8.4
+flask==3.1.2
