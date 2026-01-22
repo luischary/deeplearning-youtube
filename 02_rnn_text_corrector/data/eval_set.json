@@ -1,0 +1,215 @@
+[
+    {"cat":"acentos","src":"nao sei se voce entendeu","tgt":"não sei se você entendeu"},
+    {"cat":"acentos","src":"eu tambem acho isso","tgt":"eu também acho isso"},
+    {"cat":"acentos","src":"amanha eu volto cedo","tgt":"amanhã eu volto cedo"},
+    {"cat":"teclado_typo","src":"este e o meu testw","tgt":"este é o meu teste"},
+    {"cat":"teclado_typo","src":"eu estou indi pro trabsllho","tgt":"eu estou indo para o trabalho"},
+    {"cat":"teclado_typo","src":"issl foi incrivel mesmi","tgt":"isso foi incrível mesmo"},
+    {"cat":"repeticao","src":"obrigadoooo","tgt":"obrigado"},
+    {"cat":"repeticao","src":"euuuu to feliz","tgt":"eu estou feliz"},
+    {"cat":"remocao","src":"vamo pra casa","tgt":"vamos para casa"},
+    {"cat":"remocao","src":"eu to com fom","tgt":"eu estou com fome"},
+    {"cat":"remocao","src":"amanha eu lig","tgt":"amanhã eu ligo"},
+    {"cat":"informal","src":"vc vai hj?","tgt":"você vai hoje?"},
+    {"cat":"informal","src":"tb acho isso","tgt":"também acho isso"},
+    {"cat":"informal","src":"me manda a msg","tgt":"me manda a mensagem"},
+    {"cat":"case","src":"EU NAO SEI","tgt":"eu não sei"},
+    {"cat":"case","src":"voce ta bem?","tgt":"você está bem?"},
+    {"cat":"case","src":"amanha EU volto","tgt":"amanhã eu volto"},
+    {"cat":"pontuacao_espaco","src":"oi , tudo bem ?","tgt":"oi, tudo bem?"},
+    {"cat":"pontuacao_espaco","src":"isso e serio !!!","tgt":"isso é sério!"},
+    {"cat":"pontuacao_espaco","src":"vamos ( hoje ) ?","tgt":"vamos (hoje)?"},
+    {"cat":"combo","src":"to bem e vc??","tgt":"estou bem e você?"},
+    {"cat":"combo","src":"vc nao vai hj ou amanha??","tgt":"você não vai hoje ou amanhã?"},
+    {"cat":"combo","src":"este aqui e o meu testw... nao vou  maiss!","tgt":"este aqui é o meu teste... não vou mais!"},
+    {
+        "cat": "repeticao",
+        "src": "naooo acredito nissooo",
+        "tgt": "não acredito nisso"
+    },
+    {
+        "cat": "repeticao",
+        "src": "euuuu to com muita fomeeeee",
+        "tgt": "eu estou com muita fome"
+    },
+    {
+        "cat": "informal",
+        "src": "vc vai hj? blz entao",
+        "tgt": "você vai hoje? beleza então"
+    },
+    {
+        "cat": "informal",
+        "src": "tb acho, vlw flw",
+        "tgt": "também acho, valeu falou"
+    },
+    {
+        "cat": "cultura_pop",
+        "src": "luke, eu sou seu pui",
+        "tgt": "luke, eu sou seu pai"
+    },
+    {
+        "cat": "cultura_pop",
+        "src": "vida loga e prospera",
+        "tgt": "vida longa e próspera"
+    },
+    {
+        "cat": "cultura_pop",
+        "src": "o iverno esta chgando",
+        "tgt": "o inverno está chegando"
+    },
+    {
+        "cat": "contexto_semantico",
+        "src": "eu gosto de comer chao de queijo",
+        "tgt": "eu gosto de comer pão de queijo"
+    },
+    {
+        "cat": "contexto_semantico",
+        "src": "cuidado com o pao bravo",
+        "tgt": "cuidado com o cão bravo"
+    },
+    {
+        "cat": "contexto_semantico",
+        "src": "vou viajar para a prata",
+        "tgt": "vou viajar para a praia"
+    },
+    {
+        "cat": "armadilha_dicionario",
+        "src": "analise de dadis complexos",
+        "tgt": "análise de dados complexos"
+    },
+    {
+        "cat": "armadilha_dicionario",
+        "src": "este teste eh perigso",
+        "tgt": "este teste é perigoso"
+    },
+    {
+        "cat": "trava_lingua",
+        "src": "o rat roeu a rupa do ri de rma",
+        "tgt": "o rato roeu a roupa do rei de roma"
+    },
+    {
+        "cat": "combo",
+        "src": "Oka, tudi bem? Este eu m teste de aumento de dad!s!",
+        "tgt": "Olá, tudo bem? Este é um teste de aumento de dados!"
+    },
+    {
+        "cat": "combo",
+        "src": "to bem e vc?? vamos marcar akele cafe??",
+        "tgt": "estou bem e você? vamos marcar aquele café?"
+    },
+    {
+        "cat": "acentos",
+        "src": "ele nao esta aqui agora",
+        "tgt": "ele não está aqui agora"
+    },
+    {
+        "cat": "acentos",
+        "src": "voce sabe porque isso aconteceu",
+        "tgt": "você sabe por que isso aconteceu"
+    },
+    {
+        "cat": "teclado_typo",
+        "src": "isso nao faz sentdio nenhum",
+        "tgt": "isso não faz sentido nenhum"
+    },
+    {
+        "cat": "teclado_typo",
+        "src": "eu prciso resolver isso hj",
+        "tgt": "eu preciso resolver isso hoje"
+    },
+    {
+        "cat": "repeticao",
+        "src": "simmmmm concordo",
+        "tgt": "sim concordo"
+    },
+    {
+        "cat": "repeticao",
+        "src": "nossa que legaaaal",
+        "tgt": "nossa que legal"
+    },
+    {
+        "cat": "remocao",
+        "src": "amanha eu fal com vc",
+        "tgt": "amanhã eu falo com você"
+    },
+    {
+        "cat": "remocao",
+        "src": "depois eu te explic direitinho",
+        "tgt": "depois eu te explico direitinho"
+    },
+    {
+        "cat": "informal",
+        "src": "pq vc nao foi la ontem",
+        "tgt": "por que você não foi lá ontem"
+    },
+    {
+        "cat": "informal",
+        "src": "a gnt se fala dps",
+        "tgt": "a gente se fala depois"
+    },
+    {
+        "cat": "case",
+        "src": "NAO ACREDITO NISSO",
+        "tgt": "não acredito nisso"
+    },
+    {
+        "cat": "case",
+        "src": "Eu So Quero Dizer Oi",
+        "tgt": "eu só quero dizer oi"
+    },
+    {
+        "cat": "pontuacao_espaco",
+        "src": "isso , serio ?!",
+        "tgt": "isso, sério?!"
+    },
+    {
+        "cat": "pontuacao_espaco",
+        "src": "calma ... vai dar certo",
+        "tgt": "calma... vai dar certo"
+    },
+    {
+        "cat": "combo",
+        "src": "vc ta on?? me respondeee",
+        "tgt": "você está online? me responde"
+    },
+    {
+        "cat": "combo",
+        "src": "naooo da pra ir hj!!!",
+        "tgt": "não dá para ir hoje!"
+    },
+    {
+        "cat": "contexto_semantico",
+        "src": "vou levar o cello pro concerto",
+        "tgt": "vou levar o violoncelo para o concerto"
+    },
+    {
+        "cat": "contexto_semantico",
+        "src": "o medico pediu exame de fezes",
+        "tgt": "o médico pediu exame de fezes"
+    },
+    {
+        "cat": "armadilha_dicionario",
+        "src": "precisamos rever esse concelho",
+        "tgt": "precisamos rever esse conselho"
+    },
+    {
+        "cat": "armadilha_dicionario",
+        "src": "o juiz vai descriminar o caso",
+        "tgt": "o juiz vai discriminar o caso"
+    },
+    {
+        "cat": "trava_lingua",
+        "src": "triz tigres trigam trigo no trigal",
+        "tgt": "três tigres trigam trigo no trigal"
+    },
+    {
+        "cat": "cultura_pop",
+        "src": "que a forca esteja com vc",
+        "tgt": "que a força esteja com você"
+    },
+    {
+        "cat": "cultura_pop",
+        "src": "hakuna matata isso e viver",
+        "tgt": "hakuna matata, isso é viver"
+    }
+]
