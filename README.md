@@ -25,6 +25,7 @@ Abaixo você encontra a lista de todos os projetos abordados nos vídeos.
 | 01 | **Geração de texto com RNN**<br>Construindo o pipeline completo do ZERO. | 💻 Prática | [🎥 Assistir](https://youtu.be/zmaNIXOWbuo) <br> [📂 Ver Código](./01_rnn_text_gen/) | `PyTorch`, `NLP`, `RNN` |
 | 02 | **Correção de texto com RNN**<br>Mega projeto para dominar RNNs. | 💻 Prática | [🎥 Assistir](https://youtube.com/playlist?list=PLxn5KTcVccYFDGqKMaqfa62RFj2Q5WAaN&si=j8Mnj_LdGv3jENCH)  <br> [📂 Ver Código](./02_rnn_text_corrector/) | `PyTorch`, `NLP`, `RNN` |
 | 03 | **Tokenizador BPE**<br>Entendendo e criando o seu próprio tokenizador | 💻 Prática | [🎥 Assistir](https://www.youtube.com/playlist?list=PLxn5KTcVccYH9APRgvvaeN-JtwkCYLLNc)  <br> [📂 Ver Código](./03_bpe_tokenizer) | `Python`, `NLP`, `Tokenização` |
+| 04 | **Atenção**<br>Implementando variações de QKV attention | 💻 Prática | [🎥 Assistir](https://youtu.be/S1pgy9xNTjw)  <br> [📂 Ver Código](./04_attention) | `Python`, `NLP`, `Atenção`, `Transformer` |
 | -- | *Mais aulas em breve...* | ... | ... |
 
 *(Dica: Cada pasta possui seu próprio README com instruções específicas de como rodar aquele projeto.)*
