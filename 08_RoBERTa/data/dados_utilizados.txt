@@ -1,0 +1,10 @@
+IMDB
+https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews
+
+Wikipedia EN (datasets huggingface)
+from datasets import load_dataset
+
+ds = load_dataset("wikimedia/wikipedia", "20231101.en")
+
+Wikipedia EN (meu drive)
+https://drive.google.com/file/d/1_sA7fFpQxxR_4c8cpeqmVUEd1ucVbTfv/view?usp=sharing
