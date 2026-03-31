@@ -29,7 +29,6 @@ Abaixo você encontra a lista de todos os projetos abordados nos vídeos.
 | 05 | **Multi-Head Attention**<br>Implementando self-attention, masked self-attention e cross-attention | 💻 Prática | [🎥 Assistir](https://youtu.be/SwDXohxeC7g)  <br> [📂 Ver Código](./05_multihead_attention) | `Python`, `NLP`, `Atenção`, `Transformer` |
 | 06 | **Transformer**<br>Implementando a arquitetura Transformer completa (Encoder e Decoder) do zero | 💻 Prática | [🎥 Assistir](https://youtu.be/uPg-1GUnVSE)  <br> [📂 Ver Código](./06_transformer) | `PyTorch`, `NLP`, `Transformer` |
 | 07 | **Transformer**<br>Implementando um GPT do zero | 💻 Prática | [🎥 Assistir](https://youtu.be/-vi44MPkrkI)  <br> [📂 Ver Código](./07_GPT) | `PyTorch`, `NLP`, `Transformer` |
-| -- | *Mais aulas em breve...* | ... | ... |
 | 08 | **Transformer**<br>Classificação de texto -> Pré-treino e finetunning | 💻 Prática | [🎥 Assistir](https://youtu.be/TJxAQc1EEZ0)  <br> [📂 Ver Código](./08_RoBERTa) | `PyTorch`, `NLP`, `Transformer` |
 | -- | *Mais aulas em breve...* | ... | ... |
 
