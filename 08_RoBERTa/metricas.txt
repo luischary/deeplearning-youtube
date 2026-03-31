@@ -1,0 +1,57 @@
+# ARQUITETURA
+Encoder
+vocab_size=5_000,
+embed_dim=256,
+num_heads=8,
+hidden_size=1024,
+num_layers=4,
+max_len=512,
+dropout=0.1,
+num_classes=1,
+
+# TOKENIZER
+Treinado na base do wikipedia en, em uma amostra de 100.000 de textos.
+
+# MODELO TREINADO DO ZERO 
+Best F1: 0.8285 at threshold: 0.47
+              precision    recall  f1-score   support
+
+           0       0.86      0.78      0.82      2528
+           1       0.79      0.87      0.83      2472
+
+    accuracy                           0.82      5000
+   macro avg       0.83      0.82      0.82      5000
+weighted avg       0.83      0.82      0.82      5000
+
+# MODELO PRE TREINADO (100k steps Wikipedia EN)
+Best F1: 0.8608 at threshold: 0.62
+              precision    recall  f1-score   support
+
+           0       0.87      0.86      0.86      2528
+           1       0.86      0.86      0.86      2472
+
+    accuracy                           0.86      5000
+   macro avg       0.86      0.86      0.86      5000
+weighted avg       0.86      0.86      0.86      5000
+
+# MODELO PRE TREINADO (100k steps Wikipedia EN e LR 3e-5)
+Best F1: 0.8597 at threshold: 0.82
+              precision    recall  f1-score   support
+
+           0       0.88      0.84      0.86      2528
+           1       0.84      0.88      0.86      2472
+
+    accuracy                           0.86      5000
+   macro avg       0.86      0.86      0.86      5000
+weighted avg       0.86      0.86      0.86      5000
+
+# MODELO PRE TREINADO (200k steps Wikipepdia EN e LR 3e-5)
+Best F1: 0.8781 at threshold: 0.52
+              precision    recall  f1-score   support
+
+           0       0.90      0.86      0.88      2528
+           1       0.86      0.90      0.88      2472
+
+    accuracy                           0.88      5000
+   macro avg       0.88      0.88      0.88      5000
+weighted avg       0.88      0.88      0.88      5000
