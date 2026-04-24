@@ -31,6 +31,7 @@ Abaixo você encontra a lista de todos os projetos abordados nos vídeos.
 | 07 | **Transformer**<br>Implementando um GPT do zero | 💻 Prática | [🎥 Assistir](https://youtu.be/-vi44MPkrkI)  <br> [📂 Ver Código](./07_GPT) | `PyTorch`, `NLP`, `Transformer` |
 | 08 | **Transformer**<br>Classificação de texto -> Pré-treino e finetunning | 💻 Prática | [🎥 Assistir](https://youtu.be/TJxAQc1EEZ0)  <br> [📂 Ver Código](./08_RoBERTa) | `PyTorch`, `NLP`, `Transformer` |
 | 09 | **Transformer**<br>KV Cache | 💻 Prática | [🎥 Assistir](https://youtu.be/Wv5c8gTnVN4)  <br> [📂 Ver Código](./09_KVCache) | `PyTorch`, `NLP`, `Transformer` |
+| 10 | **RoPE**<br>Rotary Positional Encoding | 💻 Prática | [🎥 Assistir](https://youtu.be/ehbooXr2PKg)  <br> [📂 Ver Código](./10_RoPE) | `PyTorch`, `NLP`, `Transformer` |
 | -- | *Mais aulas em breve...* | ... | ... |
 
 *(Dica: Cada pasta possui seu próprio README com instruções específicas de como rodar aquele projeto.)*

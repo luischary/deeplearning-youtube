@@ -215,3 +215,6 @@ __marimo__/
 
 # pytorch
 *.pt
+
+# transcricoes
+transcription.txt
