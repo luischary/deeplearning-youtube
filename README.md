@@ -33,6 +33,7 @@ Abaixo você encontra a lista de todos os projetos abordados nos vídeos.
 | 09 | **Transformer**<br>KV Cache | 💻 Prática | [🎥 Assistir](https://youtu.be/Wv5c8gTnVN4)  <br> [📂 Ver Código](./09_KVCache) | `PyTorch`, `NLP`, `Transformer` |
 | 10 | **RoPE**<br>Rotary Positional Encoding | 💻 Prática | [🎥 Assistir](https://youtu.be/ehbooXr2PKg)  <br> [📂 Ver Código](./10_RoPE) | `PyTorch`, `NLP`, `Transformer` |
 | 11 | **GQA**<br>Grouped Query Attention — reduzindo o KV Cache sem perder performance | 💻 Prática | [🎥 Assistir](https://youtu.be/ZOandvv43uk)  <br> [📂 Ver Código](./11_GQA) | `PyTorch`, `NLP`, `Transformer` |
+| 12 | **Como Neurônios Viram Redes Neurais?**<br>Funções de ativação e por que elas são o ingrediente essencial da não-linearidade | 🧠 Teoria + 💻 Prática | [🎥 Assistir](https://www.youtube.com/watch?v=JL35p8PE3jk)  <br> [📂 Ver Código](./12_neuronio_vira_rede) | `PyTorch`, `Deep Learning` |
 | -- | *Mais aulas em breve...* | ... | ... |
 
 *(Dica: Cada pasta possui seu próprio README com instruções específicas de como rodar aquele projeto.)*
