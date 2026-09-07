@@ -1,0 +1,6 @@
+{
+  "seed": 42,
+  "checkpoint": "outputs\\04_mnist_treino\\checkpoint.pt",
+  "count": 16,
+  "accuracy_in_grid": 0.9375
+}

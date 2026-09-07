@@ -1,0 +1,20 @@
+{
+  "seed": 42,
+  "output_dir": "outputs/01_regressao_gd_manual",
+  "samples": 100,
+  "noise_std": 0.5,
+  "learning_rate": 0.05,
+  "steps": 100,
+  "initial_w": -1.0,
+  "initial_b": 0.0,
+  "final": {
+    "step": 100,
+    "loss": 0.23971600934183218,
+    "w": 2.009544263072841,
+    "b": 2.993399019413078,
+    "dw": -7.036782659246899e-05,
+    "db": -0.00021282294557440907
+  },
+  "true_w": 2.0,
+  "true_b": 3.0
+}

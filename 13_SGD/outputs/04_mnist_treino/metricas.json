@@ -1,0 +1,21 @@
+{
+  "seed": 42,
+  "output_dir": "outputs/04_mnist_treino",
+  "data_dir": "data",
+  "learning_rate": 0.1,
+  "epochs": 3,
+  "batch_size": 64,
+  "hidden_size": 64,
+  "device": "cpu",
+  "limit_train": null,
+  "limit_test": null,
+  "quick": false,
+  "final": {
+    "epoch": 3,
+    "updates": 2814,
+    "samples_seen": 180000,
+    "train_loss_per_sample": 0.17933034501075745,
+    "test_loss_per_sample": 0.15990876003801824,
+    "test_accuracy": 0.9532
+  }
+}
