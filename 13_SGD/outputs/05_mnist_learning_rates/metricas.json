@@ -1,0 +1,56 @@
+{
+  "seed": 42,
+  "output_dir": "outputs/05_mnist_learning_rates",
+  "data_dir": "data",
+  "learning_rates": [
+    0.01,
+    0.1,
+    0.5,
+    1.0
+  ],
+  "epochs": 3,
+  "batch_size": 64,
+  "hidden_size": 64,
+  "device": "cpu",
+  "limit_train": null,
+  "limit_test": null,
+  "quick": false,
+  "results": [
+    {
+      "learning_rate": 0.01,
+      "epoch": 3,
+      "updates": 2814,
+      "samples_seen": 180000,
+      "train_loss_per_sample": 0.39941857390403745,
+      "test_loss_per_sample": 0.3571170423746109,
+      "test_accuracy": 0.9006
+    },
+    {
+      "learning_rate": 0.1,
+      "epoch": 3,
+      "updates": 2814,
+      "samples_seen": 180000,
+      "train_loss_per_sample": 0.17933034501075745,
+      "test_loss_per_sample": 0.15990876003801824,
+      "test_accuracy": 0.9532
+    },
+    {
+      "learning_rate": 0.5,
+      "epoch": 3,
+      "updates": 2814,
+      "samples_seen": 180000,
+      "train_loss_per_sample": 0.0907180328682065,
+      "test_loss_per_sample": 0.1410318718187511,
+      "test_accuracy": 0.9539
+    },
+    {
+      "learning_rate": 1.0,
+      "epoch": 3,
+      "updates": 2814,
+      "samples_seen": 180000,
+      "train_loss_per_sample": 0.12843862149119378,
+      "test_loss_per_sample": 0.17219285788163544,
+      "test_accuracy": 0.9481
+    }
+  ]
+}

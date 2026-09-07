@@ -1,0 +1,29 @@
+{
+  "seed": 42,
+  "steps": 80,
+  "initial_w": -1.0,
+  "initial_b": 0.0,
+  "results": [
+    {
+      "learning_rate": 0.005,
+      "final_loss": 3.7474149505285586,
+      "final_w": 0.7988841299392424,
+      "final_b": 1.5989913531273616,
+      "finite": true
+    },
+    {
+      "learning_rate": 0.05,
+      "final_loss": 0.23971681050691265,
+      "final_w": 2.0092757548539004,
+      "final_b": 2.992651488452295,
+      "finite": true
+    },
+    {
+      "learning_rate": 0.9,
+      "final_loss": 221168697420.94547,
+      "final_w": -414817.10282669787,
+      "final_b": 108748.68956701062,
+      "finite": true
+    }
+  ]
+}
