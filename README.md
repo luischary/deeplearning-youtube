@@ -35,6 +35,7 @@ Abaixo você encontra a lista de todos os projetos abordados nos vídeos.
 | 11 | **GQA**<br>Grouped Query Attention — reduzindo o KV Cache sem perder performance | 💻 Prática | [🎥 Assistir](https://youtu.be/ZOandvv43uk)  <br> [📂 Ver Código](./11_GQA) | `PyTorch`, `NLP`, `Transformer` |
 | 12 | **Como Neurônios Viram Redes Neurais?**<br>Funções de ativação e por que elas são o ingrediente essencial da não-linearidade | 🧠 Teoria + 💻 Prática | [🎥 Assistir](https://www.youtube.com/watch?v=JL35p8PE3jk)  <br> [📂 Ver Código](./12_neuronio_vira_rede) | `PyTorch`, `Deep Learning` |
 | 13 | **SGD: Como Gradientes Viram Aprendizado?**<br>Do Gradiente Descendente ao Mini-batch SGD: taxa de aprendizado, ruído de batch e treino no MNIST | 🧠 Teoria + 💻 Prática | [🎥 Assistir](https://youtu.be/yL9Y7kIqFNM)  <br> [📂 Ver Código](./13_SGD) | `PyTorch`, `Deep Learning`, `Otimização` |
+| 14 | **Neurônio do Zero**<br>Construindo um neurônio e o ciclo completo de treinamento sem frameworks (apenas NumPy) | 🧠 Teoria + 💻 Prática | [🎥 Assistir](https://youtu.be/F4l2zfs7NYU)  <br> [📂 Ver Código](./14_neuronio_do_zero) | `Python`, `NumPy`, `Deep Learning` |
 | -- | *Mais aulas em breve...* | ... | ... |
 
 *(Dica: Cada pasta possui seu próprio README com instruções específicas de como rodar aquele projeto.)*
