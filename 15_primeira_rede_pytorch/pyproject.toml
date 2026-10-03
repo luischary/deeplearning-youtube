@@ -8,15 +8,16 @@ authors = [
 ]
 requires-python = "<=3.14, >=3.13"
 dependencies = [
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.3",
     "pandas>=3.0.6",
+    "pillow>=12.3.0",
     "pyarrow>=25.0.1",
+    "scikit-learn>=1.9.1",
     "torch",
     "torchvision",
+    "tqdm>=4.70.1",
 ]
 
-[project.scripts]
-primeira-rede = "primeira_rede:main"
-
-[build-system]
-requires = ["uv_build>=0.12.8,<0.13.0"]
-build-backend = "uv_build"
+[tool.uv]
+package = false
