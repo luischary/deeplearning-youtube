@@ -1,14 +1,35 @@
+"""Gera metadados path/label para os splits train e test do MNIST exportado."""
+
 from pathlib import Path
+
 import pandas as pd
 
-images_root = Path("./data/MNIST/images/test")
-dados = {"path": [], "label": []}
 
-for pasta_classe in images_root.iterdir():
-    for image_path in pasta_classe.iterdir():
-        dados["path"].append("./" + image_path.as_posix())
-        dados["label"].append(pasta_classe.name)
+DATA_DIR = Path(__file__).resolve().parent / "data"
 
-df = pd.DataFrame(dados)
-print(df)
-df.to_csv("./data/metadados_teste.csv", index=False)
+
+def mapear_split(split: str) -> None:
+    images_root = DATA_DIR / "MNIST" / "images" / split
+    if not images_root.is_dir():
+        raise FileNotFoundError(
+            f"Imagens ausentes em {images_root}. Execute antes "
+            "data/download_mnist.py e data/prepare_mnist.py."
+        )
+
+    dados = {"path": [], "label": []}
+    for pasta_classe in sorted(images_root.iterdir()):
+        if not pasta_classe.is_dir():
+            continue
+        for image_path in sorted(pasta_classe.glob("*.png")):
+            dados["path"].append("./" + image_path.relative_to(DATA_DIR.parent).as_posix())
+            dados["label"].append(int(pasta_classe.name))
+
+    df = pd.DataFrame(dados)
+    output = DATA_DIR / f"metadados_{'treino' if split == 'train' else 'teste'}.csv"
+    df.to_csv(output, index=False)
+    print(f"{split}: {len(df)} exemplos -> {output}")
+
+
+if __name__ == "__main__":
+    for split in ("train", "test"):
+        mapear_split(split)

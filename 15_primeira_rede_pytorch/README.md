@@ -32,7 +32,8 @@ O script de treinamento executa um fluxo modular e bem delimitado:
 
 ```mermaid
 flowchart TD
-    A[Imagens em Disco<br>data/MNIST/images/] -->|mapeamento.py| B[Metadados CSV<br>path e label]
+    A[MNIST IDX<br>download_mnist.py] -->|prepare_mnist.py| I[Imagens PNG<br>data/MNIST/images/]
+    I -->|mapeamento.py| B[Metadados CSV<br>path e label]
     B --> C[MNISTDataset<br>src/dataset.py]
     C -->|Carrega imagem, converte em tensor, escala /255| D[DataLoader<br>batch_size=32, shuffle=True]
     D --> E[Modelo PyTorch<br>Flatten -> Linear -> ReLU -> Linear]
@@ -124,69 +125,80 @@ Para além dos números agregados, o script `metricas.py` gera artefatos de diag
 
 ## 📂 Estrutura do Código
 
+Os arquivos IDX, os 70 mil PNGs e os CSVs são **gerados localmente**; não vêm no clone do GitHub. Os resultados versionados em `modelos_treinados/` são exemplos da execução do vídeo, não substituem a preparação dos dados.
+
 ```
 15_primeira_rede_pytorch/
 ├── data/
-│   ├── metadados_treino.csv      # Mapeamento pré-computado das 60.000 imagens de treino
-│   ├── metadados_teste.csv       # Mapeamento pré-computado das 10.000 imagens de teste
-│   └── MNIST/images/             # Imagens em PNG separadas por pastas de dígitos (0 a 9)
-├── modelos_treinados/
-│   ├── linear/                   # Histórico e métricas do classificador linear sem escala
-│   ├── linear_transform/         # Histórico e métricas do classificador linear com escala
-│   └── mlp/                      # Histórico, métricas e grades de previsões do MLP
-│       ├── historico.json
-│       ├── historico_teste.json
-│       └── metricas/
-│           ├── classification_reports.txt
-│           ├── evolucao_metricas.png
-│           ├── zoom_test.png
-│           └── grade_previsoes_epoca_*.png
-├── src/
-│   └── dataset.py                # Implementação customizada de MNISTDataset e default_transform
-├── mapeamento.py                 # Varre as pastas de imagens e constrói os CSVs de metadados
-├── train.py                      # Pipeline completo: Modelo, DataLoaders, loop de treino e evaluate
-├── test.py                       # Script rápido para verificação de shapes e sanidade dos tensores
-├── metricas.py                   # Gera gráficos de evolução, relatórios e grades visuais de dígitos
-├── pyproject.toml                # Definição do ambiente e dependências via uv
-└── transcription.txt             # Transcrição completa em áudio da aula do vídeo
+│   ├── download_mnist.py         # Baixa/extrai os quatro arquivos IDX via torchvision
+│   ├── original_loader.py        # Leitor do formato IDX usado na exportação
+│   ├── prepare_mnist.py          # Converte os IDX em PNGs por split/classe
+│   ├── MNIST/raw/                # Gerado: quatro arquivos IDX (não versionados)
+│   ├── MNIST/images/             # Gerado: train/0..9 e test/0..9 em PNG
+│   ├── metadados_treino.csv      # Gerado: 60.000 caminhos e labels
+│   └── metadados_teste.csv       # Gerado: 10.000 caminhos e labels
+├── modelos_treinados/            # Históricos, métricas e grades das execuções
+├── src/dataset.py                # Dataset customizado com read_image
+├── mapeamento.py                 # Gera ambos os CSVs de metadados
+├── train.py                      # Modelo, DataLoaders, loop e evaluate
+├── test.py                       # Inspeção opcional de shapes e dados
+├── metricas.py                   # Gráficos, relatórios e grades de dígitos
+├── pyproject.toml                # Dependências do projeto (Python 3.13)
+└── uv.lock                       # Versões resolvidas pelo uv
 ```
 
 ---
 
-## 🚀 Como Executar
+## 🚀 Reproduzir a partir de um clone limpo
 
-### 1. Configurar o Ambiente
+Execute **todos os comandos a partir da pasta `15_primeira_rede_pytorch/`**, não da raiz do repositório nem de `data/`. É preciso Python 3.13, [`uv`](https://docs.astral.sh/uv/getting-started/installation/) e conexão para o download inicial. Os scripts e o treinamento funcionam em CPU; não é necessário ter GPU. O `train.py` deste vídeo está configurado para CPU.
 
-Você pode usar o gerenciador **uv** (recomendado) ou ambiente virtual padrão com `pip`:
+### 1. Criar o ambiente
 
-**Usando uv:**
 ```bash
-uv sync
+uv sync --frozen
 ```
 
-**Usando pip tradicional:**
-```bash
-python -m venv venv
-# No Windows:
-venv\Scripts\activate
-# No Linux/Mac:
-source venv/bin/activate
+As bibliotecas usadas na preparação, treinamento e métricas estão no `pyproject.toml` e no `uv.lock`. Para instalações de PyTorch específicas de GPU, consulte o [seletor oficial](https://pytorch.org/get-started/locally/); isso não é necessário para reproduzir o fluxo em CPU.
 
-pip install torch torchvision pandas pyarrow matplotlib scikit-learn tqdm
+### 2. Baixar os dados originais do MNIST
+
+```bash
+uv run python data/download_mnist.py
 ```
 
-### 2. Gerar os Metadados das Imagens
-```bash
-python mapeamento.py
+Esse script usa o [`torchvision.datasets.MNIST`](https://docs.pytorch.org/vision/stable/generated/torchvision.datasets.MNIST.html) para baixar e extrair os quatro arquivos IDX em `data/MNIST/raw/`:
+
+```text
+train-images-idx3-ubyte   train-labels-idx1-ubyte
+t10k-images-idx3-ubyte    t10k-labels-idx1-ubyte
 ```
 
-### 3. Treinar o Modelo
+Se eles já existem, a rotina de download reaproveita o cache. Os arquivos brutos não são enviados ao GitHub.
+
+### 3. Exportar imagens PNG por classe
+
 ```bash
-python train.py
+uv run python data/prepare_mnist.py
 ```
 
-### 4. Gerar Gráficos e Diagnósticos Visuais
+O script lê os IDX e gera 60.000 PNGs em `data/MNIST/images/train/<classe>/` e 10.000 em `data/MNIST/images/test/<classe>/`. A conversão de 70 mil arquivos pode demorar e ocupar espaço em disco. As imagens geradas ficam apenas na máquina local.
+
+### 4. Criar os metadados para os dois splits
+
 ```bash
-python metricas.py
+uv run python mapeamento.py
 ```
-Os relatórios e as imagens serão salvos automaticamente em `modelos_treinados/<nome_modelo>/metricas/`.
+
+Isso gera `data/metadados_treino.csv` (**60.000 linhas de dados**) e `data/metadados_teste.csv` (**10.000 linhas de dados**), com colunas `path` e `label` (mais o cabeçalho em cada arquivo). Os caminhos são relativos à pasta do projeto; por isso, rode os próximos comandos ainda em `15_primeira_rede_pytorch/`.
+
+### 5. Treinar e gerar o diagnóstico
+
+```bash
+uv run python train.py
+uv run python metricas.py
+```
+
+`train.py` parte da MLP configurada em `MODEL_NAME = "mlp"` e salva os históricos em `modelos_treinados/mlp/`. `metricas.py` lê esses históricos e cria curvas, grade de previsões e relatório por classe. Resultados podem variar por hardware/versões; as porcentagens do vídeo são da execução demonstrada, não um benchmark universal.
+
+**Se aparecer `FileNotFoundError`:** confira a ordem `download_mnist.py → prepare_mnist.py → mapeamento.py → train.py` e o diretório de onde o comando foi executado. Não rode `mapeamento.py` antes de existirem `data/MNIST/images/train/` e `test/`.

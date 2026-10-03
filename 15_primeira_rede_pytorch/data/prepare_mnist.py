@@ -1,14 +1,19 @@
 import os
+from pathlib import Path
+
 import numpy as np
 from PIL import Image
 
 from original_loader import MnistDataloader
 
+DATA_DIR = Path(__file__).resolve().parent
+RAW_DIR = DATA_DIR / "MNIST" / "raw"
+
 (x_train, y_train), (x_test, y_test) = MnistDataloader(
-    "./MNIST/raw/train-images-idx3-ubyte",
-    "./MNIST/raw/train-labels-idx1-ubyte",
-    "./MNIST/raw/t10k-images-idx3-ubyte",
-    "./MNIST/raw/t10k-labels-idx1-ubyte",
+    RAW_DIR / "train-images-idx3-ubyte",
+    RAW_DIR / "train-labels-idx1-ubyte",
+    RAW_DIR / "t10k-images-idx3-ubyte",
+    RAW_DIR / "t10k-labels-idx1-ubyte",
 ).load_data()
 
 
@@ -42,7 +47,7 @@ def export_mnist_to_folders(images, labels, output_dir):
 
 
 # --- Executando o export ---
-base_output = "./MNIST/images"
+base_output = DATA_DIR / "MNIST" / "images"
 
 export_mnist_to_folders(x_train, y_train, os.path.join(base_output, "train"))
 export_mnist_to_folders(x_test, y_test, os.path.join(base_output, "test"))
