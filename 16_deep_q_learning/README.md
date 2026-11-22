@@ -56,7 +56,7 @@ Onde:
 ### 3. Arquitetura da Rede Neural
 Ambos os ambientes compartilham exatamente a mesma MLP simples definida em `build_model`:
 
-$$\text{Input } (\text{state\_size}) \longrightarrow \text{Linear}(64) \longrightarrow \text{ReLU} \longrightarrow \text{Linear}(64) \longrightarrow \text{ReLU} \longrightarrow \text{Linear}(\text{action\_size})$$
+$$\text{Input } (d_{\text{state}}) \longrightarrow \text{Linear}(64) \longrightarrow \text{ReLU} \longrightarrow \text{Linear}(64) \longrightarrow \text{ReLU} \longrightarrow \text{Linear}(n_{\text{actions}})$$
 
 ---
 
